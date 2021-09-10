@@ -56,5 +56,30 @@ output:
 - `m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)`  
 - `m`  
 - `x <- m[4, 5]`  
-  + order is row by column so that value is equal to 36  
-  + i'm trying `x<-c(m[])`
+  + order is row by column so that value is equal to 36   
+- `x<-c(m[, 2], m[, 3], m[,6])`  
+  + gives the elements from columns 2, 3, and 6
+  + _unsure if this is suppose to be segmented?_  
+- `x<-c(m[6,], m[8,])`  
+  + assigns variable x the elements from rows 6 and 8  
+- `x<-c(m[2, 2]:m[6, 9])`  
+  + assigns the elements from (row 2, column 2) to (row 6, column 9) to the variable x  
+
+#### Challenge 3  
+
+- Construct a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)  
+  + `m<-array(c(400:1), dim = c(5, 5, 4, 4))`  
+  + i am __unsure__ how he dimension is manipulated by the 5 x 5 x 4 x 4 elements?? but it does work lol  
+- `a[1, 1, 1, 2]`  
+  + `[1] 300'  
+- `a[2, 3, 2, ]`  
+  + `[1] 364 264 164 64  
+- `a[1:5, 1:5, 3, 3]`  
+  + `[,1] [,2] [,3] [,4] [,5]
+[1,]  150  145  140  135  130
+[2,]  149  144  139  134  129
+[3,]  148  143  138  133  128
+[4,]  147  142  137  132  127
+[5,]  146  141  136  131  126`  
+
+### Overwriting
