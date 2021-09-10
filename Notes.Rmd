@@ -1,10 +1,11 @@
 ---
 title: "Notes"
 author: "_sinnabunbun (Marta)_"
-date: "9/8/2021"
+date: "_est. 9/8/2021_"
 output: 
   html_document:
     toc: true
+    toc_float: true
     theme: cosmo
 ---
 
@@ -13,7 +14,8 @@ output:
 "While Linux and Mac OSX both include SSH as part of the base system, Windows does not. As a result the standard Windows distribution of git (Msysgit, referenced above) also includes an SSH client."  
   
   - Unsure what this means, ask for clarification.  
-    + is this the same as creating an rsa key?  
+    + ~~is this the same as creating an rsa key?~~  
+    + downloading git on windows downloads a secure shell as well
   
 ## Mod 4
 
@@ -68,7 +70,7 @@ output:
 #### Challenge 3  
 
 - Construct a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)  
-  + `m<-array(c(400:1), dim = c(5, 5, 4, 4))`  
+  + `a<-array(c(400:1), dim = c(5, 5, 4, 4))`  
   + i am __unsure__ how he dimension is manipulated by the 5 x 5 x 4 x 4 elements?? but it does work lol  
 - `a[1, 1, 1, 2]`  
   + `[1] 300'  
@@ -93,7 +95,7 @@ output:
 - `m[2:5, 4:8] <- 1`  
   + changes the elements in columns 4:8 to change to number 1 for rows 2:5  
 - `m[2:5, 4:8] <- matrix(data = c(20:1), nrow = 4, ncol = 5, byrow = TRUE)`  
-  + ?  
+  + changes the   
 - `m[, 8] <- c("a", "b")`  
   + ?  
 -
