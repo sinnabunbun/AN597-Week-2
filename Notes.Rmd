@@ -8,16 +8,16 @@ output:
     theme: cosmo
 ---
 
-### Mod 3
+## Mod 3
 
 "While Linux and Mac OSX both include SSH as part of the base system, Windows does not. As a result the standard Windows distribution of git (Msysgit, referenced above) also includes an SSH client."  
   
   - Unsure what this means, ask for clarification.  
     + is this the same as creating an rsa key?  
   
-### Mod 4
+## Mod 4
 
-# Matrices  
+### Matrices  
 
 - a matrix is a collection of vectors  
 - it can only store one kind of vector at a time (ie. characters vs numerical)  
@@ -30,4 +30,31 @@ output:
   + `v2 <- c(6, 7, 8, 9)`  
   + `m1 <- rbind(v1, v2)`  
   + `m1`  
-  + _to combine these two as columns you would use the function `cbind()` instead  
+  + _to combine these two as columns you would use the function `cbind()` instead_  
+- _important commands_  
+  + `class()' gives you the class of the matrix, `dim()` gives you the amount of rows and columns, `names()` , `rownames()`, `colnames()` will all give you names of the function, however if the names are not defined it will return with _NULL_  
+  + `str()` or the structure command will give you details on any data structure.  
+  + > This is an incredibly useful function that you will find yourself using over and over again.  -Prof. Schmitt  
+- Matrices and vectors are two examples of of a broader term,  _array_  
+  + `a <- array(data = 1:90, dim = c(5, 6, 3))`  
+  + __example of a three level array with numbers 1-90, `c(5, 6, 3)` i _think_ stands for 5 rows, 6 columns, 3 levels__  
+- you can find a _subset_ of an array by using brackets, for example if you assign v the values 1-100 (`v<-1:100`) you can select certain values by saying `v[]` ex. `v[1:15]` or manually selecting the ex. `v[c(3, 4, 10, 15)]  
+  + similar to using the function `c()` to subset a vector you can substitute other functions  
+  + ex. `v[seq(from = 1, to = 100, by = 2)]` outputs the vector in sequential order, increasing by two  
+  + __Note! `from=1, to=100` indicates position 1 to position 100 _not_ necessarily numbers 1 to 100__ 
+
+#### Challenge 1  
+
+- `v1<- c("Stately, ", "plump ", "Buck ", "Mulligan ", "came ", "from ", "the ", "stairhead, ", "bearing ", "a ", "bowl ", "of ", "lather ", "on ", "which ", "a ", "mirror ", "and ", "a ", "razor ", "lay ", "crossed.")`  
+- `v1`  
+  + _don't forget commas to separate objects_  
+  + prof recommends `str_split()` but I don't think I have that properly installed?? help on installing R packages maybe  
+- `v1[seq(from = 1, to = 21, by = 3)]`  
+
+#### Challenge 2
+
+- `m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)`  
+- `m`  
+- `x <- m[4, 5]`  
+  + order is row by column so that value is equal to 36  
+  + i'm trying `x<-c(m[])`
