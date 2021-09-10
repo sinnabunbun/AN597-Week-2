@@ -1,7 +1,33 @@
 ---
 title: "Notes"
-author: "_sinnabunbun (marta)_"
-date: "9/10/2021"
-output: html_document
-theme: cosmo
+author: "_sinnabunbun (Marta)_"
+date: "9/8/2021"
+output: 
+  html_document:
+    toc: true
+    theme: cosmo
 ---
+
+### Mod 3
+
+"While Linux and Mac OSX both include SSH as part of the base system, Windows does not. As a result the standard Windows distribution of git (Msysgit, referenced above) also includes an SSH client."  
+  
+  - Unsure what this means, ask for clarification.  
+    + is this the same as creating an rsa key?  
+  
+### Mod 4
+
+# Matrices  
+
+- a matrix is a collection of vectors  
+- it can only store one kind of vector at a time (ie. characters vs numerical)  
+  + `m <- matrix(data = c(1, 2, 3, 4), nrow = 2, ncol = 2)`  
+  + _example of matrix function_
+- the matrix is filled by column normally but if you want to manually make it by row (left to right instead of up to down) insert the argument  
+  + `m <- matrix(data = c(1, 2, 3, 4), nrow = 2, ncol = 2, byrow=TRUE)`  
+- you can also make a matrix by combining two vectors  
+  + `v1 <- c(1, 2, 3, 4)`  
+  + `v2 <- c(6, 7, 8, 9)`  
+  + `m1 <- rbind(v1, v2)`  
+  + `m1`  
+  + _to combine these two as columns you would use the function `cbind()` instead  
