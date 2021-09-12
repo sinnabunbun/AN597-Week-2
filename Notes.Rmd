@@ -6,7 +6,7 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: cosmo
+    theme: cerulean
 ---
 
 ## Mod 3
@@ -95,7 +95,46 @@ output:
 - `m[2:5, 4:8] <- 1`  
   + changes the elements in columns 4:8 to change to number 1 for rows 2:5  
 - `m[2:5, 4:8] <- matrix(data = c(20:1), nrow = 4, ncol = 5, byrow = TRUE)`  
-  + changes the   
+  + changes the elements __by row__ (because by row is equal to true) to descending number from 20 to 1 starting at element [2, 4] and going to [5, 8]  
 - `m[, 8] <- c("a", "b")`  
-  + ?  
--
+  + changes all elements to include quotation marks (which idk if that is supposed to happen) and changes column 8 elements to alternating a/b  
+  
+### Lists and Data Frames
+
+- `s <- c("this", "is", "a", "vector", "of", "strings")  # here we have a vector`  
+- `m <- matrix(data = 1:40, nrow = 5, ncol = 8)  # this is a matrix`  
+- `b <- FALSE  #and this is a logical statement`  
+- `l <- list(s, m, b)  # this puts them all together as a list`  
+- `l`  
+  + this creates a list of the above three structures  
+- to view or select in a function a specific part of the list you would use the command `l[[2]]` __remember to use the double brackets__   
+  + as an extension you can call specific elements from the list as well `ls[[2]][2, 6]` that would be the element in the 2nd structure (the matrix) at the 2, 6 location  
+  + you can name the indiv. structures with `names(l) <- c("string", "matrix", "logical")` which names those three structures in the list
+  + `l$string` can now be used to call the strucure named 'string`
+  
+#### Challenge 4
+
+- quick side note on 5 make sure to use fill=t to adapt the able to be able to accept different vector lengths for the vectors
+
+Creating a List of word vectors to make a phylogeneic tree
+```{r taxonomy}
+Lemuroidea <- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae",
+    "Daubentoniidae")
+Lorisoidea <- c("Lorisidae", "Galagidae")
+Strepsirhini <- list(Lemuroidea, Lorisoidea)
+names(Strepsirhini) <- list("Lemuroidea", "Lorisoidea")
+Strepsirhini
+```
+``` {r taxonomy_full}
+  Tarsioidea<- c("Tarsiidae")
+  Catarrhini<- c("Cercopithecidae", "Hylobatidae", "Hominidae")
+  Platyrrhini<- c("Cebidae", "Atelidae", "Pitheciidae")
+  Anthropoidea<- list(Catarrhini, Platyrrhini)
+    names(Anthropoidea)<- list("Catarrhini", "Platyrrhini")
+  Haplorhini<- list(Anthropoidea, Tarsioidea)
+    names(Haplorhini)<- list("Anthropoidea", "Tarsioidea")
+Haplorhini
+  Primates<- list(Haplorhini, Strepsirhini)
+    names(Primates)<- list("Haplorhini", "Strepsirhini")
+Primates
+```
